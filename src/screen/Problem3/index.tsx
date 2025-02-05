@@ -1,27 +1,27 @@
+// import { useMemo } from "react";
 import { Button } from "antd";
-import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface WalletBalance {
-  currency: string;
-  amount: number;
-  blockchain: string;
-}
-interface FormattedWalletBalance {
-  currency: string;
-  amount: number;
-  formatted: string;
-}
+// interface WalletBalance {
+//   currency: string;
+//   amount: number;
+//   blockchain: string;
+// }
+// interface FormattedWalletBalance {
+//   currency: string;
+//   amount: number;
+//   formatted: string;
+// }
 
-interface IWalletPage {
-  className: string;
-  key: number | string;
-  amount: number;
-  usdValue: number;
-  formattedAmount: string;
-}
+// interface IWalletPage {
+//   className: string;
+//   key: number | string;
+//   amount: number;
+//   usdValue: number;
+//   formattedAmount: string;
+// }
 
-interface Props extends BoxProps {}
+// interface Props extends BoxProps {}
 
 interface IErrorAndFixRq {
   no: number;
@@ -30,7 +30,7 @@ interface IErrorAndFixRq {
   className?: string;
 }
 
-export const WalletPage: React.FC<Props> = (props?: Props) => {
+export const WalletPage: React.FC = () => {
   // const { children, ...rest } = props;
   // const balances = useWalletBalances();
   // const prices = usePrices();
@@ -133,7 +133,7 @@ export const WalletPage: React.FC<Props> = (props?: Props) => {
     {
       no: 5,
       error:
-        "5. Unimported errors include: useWalletBalances, usePrices, useMemo",
+        "5. Unimported errors include: useWalletBalances, usePrices, useMemo, BoxProps",
       fix: "Import the missing parts.",
     },
     {
