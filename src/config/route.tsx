@@ -1,6 +1,7 @@
 import { Home } from "@screen/Home"
 import { Problem1 } from "@screen/Problem1"
 import { Problem2 } from "@screen/Problem2"
+import { WalletPage } from "@screen/Problem3"
 
 export interface IRouteConfig {
     name: string
@@ -28,6 +29,13 @@ export const routes: Array<IRouteConfig> = [
         path: "/problem2",
         component: (
             <Problem2 />
+        ),
+    },
+    {
+        name: "Problem3",
+        path: "/problem3",
+        component: (
+            <WalletPage />
         ),
     },
 ]
