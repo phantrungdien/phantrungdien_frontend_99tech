@@ -22,7 +22,11 @@ export const Problem2: React.FC = () => {
 
   const options = useMemo(() => {
     if (data?.data) {
-      data?.data?.sort((a, b) => new Date(b.date) - new Date(a.date));
+      data?.data?.sort((a, b) => {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return dateB - dateA;
+      });
 
       const uniqueCurrencies = new Map();
       const result: ICurrencyRespond[] = [];
@@ -162,7 +166,10 @@ export const Problem2: React.FC = () => {
               <div className="col-span-13 lg:col-span-6 w-full">
                 <p className="mb-2">Amount</p>
                 <div className="problem_currency_to col-span-6 grid grid-cols-13 border border-solid border-gray-300 rounded-md">
-                  <Form.Item name="amount" className="flex col-span-9 sm:col-span-10">
+                  <Form.Item
+                    name="amount"
+                    className="flex col-span-9 sm:col-span-10"
+                  >
                     <InputNumber
                       placeholder="Amount"
                       className="!mr-1 !w-full !border-none !shadow-none problem_currency_to_children"
@@ -172,7 +179,10 @@ export const Problem2: React.FC = () => {
                       }
                     />
                   </Form.Item>
-                  <Form.Item name="currency_amount" className="flex col-span-4 sm:col-span-3">
+                  <Form.Item
+                    name="currency_amount"
+                    className="flex col-span-4 sm:col-span-3"
+                  >
                     <Select
                       className="custom_select problem_currency_to_children"
                       options={options || []}
@@ -181,12 +191,18 @@ export const Problem2: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-13 lg:col-span-1 flex justify-center items-end">
-                <Button className="rotate-90 lg:rotate-none" icon={<SwapOutlined />}></Button>
+                <Button
+                  className="rotate-90 lg:rotate-none"
+                  icon={<SwapOutlined />}
+                ></Button>
               </div>
               <div className="col-span-13 lg:col-span-6 w-full">
                 <p className="mb-2">Convert to</p>
                 <div className="problem_currency_to col-span-6 grid grid-cols-13 border border-solid border-gray-300 rounded-md">
-                  <Form.Item name="convert" className="flex col-span-9 sm:col-span-10">
+                  <Form.Item
+                    name="convert"
+                    className="flex col-span-9 sm:col-span-10"
+                  >
                     <InputNumber
                       placeholder="Convert to"
                       className="!mr-1 !w-full !border-none !shadow-none problem_currency_to_children"
