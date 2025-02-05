@@ -1,3 +1,6 @@
+import { Home } from "@screen/Home"
+import { Problem1 } from "@screen/Problem1"
+import { Problem2 } from "@screen/Problem2"
 
 export interface IRouteConfig {
     name: string
@@ -10,7 +13,21 @@ export const routes: Array<IRouteConfig> = [
         name: "home",
         path: "/",
         component: (
-            <div className="text-3xl font-bold underline">hello</div>
+            <Home />
+        ),
+    },
+    {
+        name: "Problem1",
+        path: "/problem1",
+        component: (
+            <Problem1 />
+        ),
+    },
+    {
+        name: "Problem2",
+        path: "/problem2",
+        component: (
+            <Problem2 />
         ),
     },
 ]
